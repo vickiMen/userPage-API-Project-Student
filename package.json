@@ -1,0 +1,28 @@
+{
+  "name": "apartment-seller",
+  "version": "1.0.0",
+  "description": "Handlebars Project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vickiMen/apartment-seller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vickiMen/apartment-seller/issues"
+  },
+  "homepage": "https://github.com/vickiMen/apartment-seller#readme",
+  "dependencies": {
+    "express-handlebars": "^3.1.0",
+    "handlebars-helpers": "^0.10.0",
+    "helper-lib": "^0.2.6",
+    "just-handlebars-helpers": "^1.0.17"
+  },
+  "devDependencies": {
+    "ember-cli-htmlbars": "^0.6.0"
+  }
+}

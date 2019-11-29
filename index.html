@@ -6,29 +6,95 @@
     <title>API Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
 </head>
 
 <body>
+
+    
+    
+    
     <div class="container">	
-        <div class="user-container"></div>	
-        <div class="quote-container"></div>	
-        <div class="content-container">	
-            <div class="pokemon-container"></div>	
-            <div class="meat-container"></div>	
-        </div>	
-        <div class="friends">	
-            <h4>Friends</h4>	
-            <div class="friends-container">	
-            </div>	
-        </div>	
-        <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
-        </div>	
+        <div class='header'>
+            <div class="user-container"></div>
+            <div class='profile-pic'></div>
+        </div>
+        <div class="quote-container"></div>
+        <div class="content-container">
+            <div class='more'>
+                <div class="pokemon-container"></div>
+                <div class="abt-me-container"></div>
+            </div>
+            <div class="friends">
+                <div class="friends-container"></div>	
+                
+            </div>
+            <div class="buttons">
+                    <button class='loadData'>Load User Data</button>
+                    <button class='displayUser'>Display User</button>
+                    <button class='saveUser'>Save User Page</button>
+                    <div class='dropdown'>
+                        <button class='loadUser'>Load User Page
+                                <div class="dropdown-content"></div>
+                            
+                        </button>
+                    </div>
+            </div>
+        </div>
     </div>
+    
+        <script class='profileInfo-template' type='text/x-handlebars-template'>
+            <div class=name>{{capitalizeEach firstName}} {{capitalizeEach lastName}} <br> </div>
+            <div class=name>From: {{capitalizeEach city}}, {{capitalizeEach country}}</div>
+        </script>
+
+        <script class='pic-template' type='text/x-handlebars-template'>
+            <img class='profile-pic' src='{{pic}}'>
+        </script>
+
+        <script class='friends-template' type='text/x-handlebars-template'>Friends:<br><br>
+            {{#each friends}}
+                {{capitalizeEach firstName}}
+                {{capitalizeEach lastName}}
+                <br>
+            {{/each}}
+        </script>
+
+        <script class='quote-template' type='text/x-handlebars-template'>
+            {{.}}
+        </script>
+
+        <script class='pokemon-template' type='text/x-handlebars-template'>
+            {{capitalizeEach name}}
+            <img src='{{img}}'>
+        </script>
+
+        <script class='abt-me-tepmlate' type='text/x-handlebars-template'>
+            {{.}}
+        </script>
+        
+        <script class='local-storage-user-tepmlate' type='text/x-handlebars-template'>
+            {{#each .}}
+                <div class='local-storage-user'>{{.}}</div>
+            {{/each}}
+        </script>
+
+
+    <script src='https://cdn.jsdelivr.net/gh/colxi/png-to-json@latest/src/png-to-json.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="node_modules/just-handlebars-helpers/dist/h.min.js"></script>
+    <script type="text/javascript">
+        // Register just-handlebars-helpers with handlebars -->
+        H.registerHelpers(Handlebars);
+    </script>
+    <script src="APIManager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+
 </body>
 
 </html>
